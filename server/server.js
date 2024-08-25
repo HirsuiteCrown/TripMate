@@ -9,7 +9,7 @@ connectDB();
 
 // Updated CORS configuration
 const corsOptions = {
-  origin: ['http://localhost:5153', 'https://tripmatee.vercel.app/'],
+  origin: ['http://localhost:5153', 'https://tripmatee.vercel.app'],
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization']
 };
