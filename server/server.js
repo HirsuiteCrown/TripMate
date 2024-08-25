@@ -7,7 +7,14 @@ const mongoose = require('mongoose');
 const app = express();
 connectDB();
 
-app.use(cors());
+// Updated CORS configuration
+const corsOptions = {
+  origin: ['http://localhost:5153', 'https://tripmatee.vercel.app/'],
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+};
+
+app.use(cors(corsOptions));
 app.use(express.json());
 const User = require('./models/User');
 
@@ -29,11 +36,10 @@ app.get('/api/users/:userId', async (req, res) => {
 
     res.json({ name: user.name }); 
   } catch (error) {
-    
     res.status(500).send('Server error');
   }
 });
 
-
 const PORT = process.env.PORT || 5000;
+
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
