@@ -7,14 +7,19 @@ const mongoose = require('mongoose');
 const app = express();
 connectDB();
 
-// Updated CORS configuration
 const corsOptions = {
   origin: ['http://localhost:5153', 'https://tripmatee.vercel.app'],
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  allowedHeaders: ['Content-Type', 'Authorization']
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true,
+  optionsSuccessStatus: 204
 };
 
 app.use(cors(corsOptions));
+
+// Handle preflight requests
+app.options('*', cors(corsOptions));
+
 app.use(express.json());
 const User = require('./models/User');
 
