@@ -5,7 +5,7 @@ import { BACKEND_URL } from "../config";
 
 export const Register = () => {
     const navigate = useNavigate();
-    const [name, setName] = useState('');
+    const [name, setName] = useState(''); 
     const [phone, setPhone] = useState('');
     const [password, setPassword] = useState('');
 
