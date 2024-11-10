@@ -33,7 +33,7 @@ TripMate is a trip management web application that allows users to create and jo
 - **Containerization**: Docker (Optional)
 
 ## Project Link
-[TripMate - Live Demo](#)
+[TripMate - Live Demo](https://tripmatee.vercel.app/)
 
 ## Installation and Setup
 
